@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Alerts {
+  id       String  @id @default(uuid())
+  fecha    String
+  estado   String
+  longitud String
+  latitud  String
+  idUser   String
+  citizen  Citizen @relation(fields: [idUser], references: [id])
+}
+
+model Citizen {
+  id          String   @id @default(uuid())
+  nombres     String
+  apellidos   String
+  celular     String
+  correo      String   @unique
+  contrasenia String
+  rol         String
+  dni         String   @unique
+  onlin       Boolean
+  Alerts      Alerts[]
+}
+
+model Central {
+  id          String  @id @default(uuid())
+  nombres     String
+  apellidos   String
+  celular     String  @unique
+  correo      String  @unique
+  contrasenia String
+  rol         String
+  onlin       Boolean
+}
+
+model Information {
+  id    String @id @default(uuid())
+  datos String
+  link  String
+  fecha String
+}
+
+model Places {
+  id        String @id @default(uuid())
+  detalle   String
+  direccion String
+  barrio    String
+  nivel     String
+  longitud  String
+  latitud   String
+}
+
+model Serene {
+  id          String  @id @default(uuid())
+  nombres     String
+  apellidos   String
+  celular     String
+  correo      String
+  contrasenia String
+  rol         String
+  onlin       Boolean
+}
+
+model Tipos {
+  id     String @id @default(uuid())
+  tipo   String
+  numero String
+}
