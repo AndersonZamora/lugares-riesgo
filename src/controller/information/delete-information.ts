@@ -5,8 +5,8 @@ import { prismaConfig } from '../../db/config';
 export const deleteInformation = async (req: Request, res: Response) => {
     try {
 
-        const { id } = req.query as Pick<IAlert, "id">
-      
+        const { id } = req.params as Pick<IAlert, "id">
+
         const exists = await prismaConfig.information.findUnique({
             where: {
                 id: id

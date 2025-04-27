@@ -4,7 +4,7 @@ import { prismaConfig } from '../../db/config';
 export const listSerene = async (req: Request, res: Response) => {
     try {
 
-        const list = prismaConfig.serene.findMany({
+        const list = await prismaConfig.serene.findMany({
             select: {
                 id: true,
                 nombres: true,

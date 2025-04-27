@@ -20,7 +20,7 @@ export const createPlaces = async (req: Request, res: Response) => {
             }
         })
 
-        if (!exists) {
+        if (exists) {
             res.status(400).json({
                 message: `${direccion} ya registrado`,
             });

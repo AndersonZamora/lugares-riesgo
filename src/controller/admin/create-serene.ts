@@ -12,8 +12,6 @@ export const createSerene = async (req: Request, res: Response) => {
             nombres,
             apellidos,
             celular,
-            rol
-
         } = req.body as Omit<ISerene, "id">
 
         const exists = await prismaConfig.serene.findFirst({
@@ -22,10 +20,11 @@ export const createSerene = async (req: Request, res: Response) => {
             }
         })
 
-        if (!exists) {
+        if (exists) {
             res.status(400).json({
                 message: `${correo} ya registrado`,
             });
+            return;
         }
 
         await prismaConfig.serene.create({

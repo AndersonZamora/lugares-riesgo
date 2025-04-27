@@ -5,7 +5,7 @@ import { prismaConfig } from '../../db/config';
 export const deleteTypes = async (req: Request, res: Response) => {
     try {
 
-        const { id } = req.query as Pick<IAlert, "id">
+        const { id } = req.params as Pick<IAlert, "id">
       
         const exists = await prismaConfig.tipos.findMany({
             where: {

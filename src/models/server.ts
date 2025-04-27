@@ -10,7 +10,7 @@ import tiposRouter from '../routers/tipos/tipos-router';
 import placesRouter from '../routers/places/places-router';
 import infoRouter from '../routers/info/info-router';
 import sereneRouter from '../routers/serene/serene-router';
-import seedRouter from '../routers/seed-router';
+// import seedRouter from '../routers/seed-router';
 import Sockets from './sockets';
 
 class Server {
@@ -38,7 +38,7 @@ class Server {
      this.app.use('/basho', placesRouter);
      this.app.use('/joho', infoRouter);
      this.app.use('/odayakana', sereneRouter);
-     this.app.use('/seed', seedRouter);
+    //  this.app.use('/seed', seedRouter);
   }
 
   private configurarSockets(): void {

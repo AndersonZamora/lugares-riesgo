@@ -13,17 +13,18 @@ export const createTipo = async (req: Request, res: Response) => {
 
         const exists = await prismaConfig.tipos.findFirst({
             where: {
-                OR: [{
-                    numero: numero.trim(),
-                    tipo: tipo.toLocaleUpperCase().trim()
-                }]
+                OR: [
+                    { numero: numero.trim() },
+                    { tipo: tipo.toLocaleUpperCase().trim() }
+                ]
             }
         })
 
-        if (!exists) {
+        if (exists) {
             res.status(400).json({
                 message: `${tipo} o ${numero} ya registrado`,
             });
+            return;
         }
 
         await prismaConfig.tipos.create({

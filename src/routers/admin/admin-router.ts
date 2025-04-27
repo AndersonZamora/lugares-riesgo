@@ -26,8 +26,8 @@ router.delete('/risuto/alerts/user/:id', deleteAlert);
 
 router.post('/risuto/serene',
     [
-        check('nombres', 'Este campo es obligatorio').not().isEmpty().isLength({ min: 4, max: 30 }),
-        check('apellidos', 'Este campo es obligatorio').not().isEmpty().isLength({ min: 4, max: 30 }),
+        check('nombres', 'Este campo es obligatorio').not().isEmpty().isLength({ min: 3, max: 30 }),
+        check('apellidos', 'Este campo es obligatorio').not().isEmpty().isLength({ min: 3, max: 30 }),
         check('celular', 'Este campo es obligatorio').not().isEmpty().isMobilePhone('es-PE'),
         check('correo', 'Email no válido').isEmail(),
         check('contrasenia', 'Este campo es obligatorio (minimo cuatro caracteres)').not().isEmpty().isLength({ min: 4, max: 15 }),

@@ -4,7 +4,7 @@ import { prismaConfig } from '../../db/config';
 export const listTypes = async (req: Request, res: Response) => {
     try {
 
-        const list = prismaConfig.tipos.findMany({
+        const list = await prismaConfig.tipos.findMany({
             select: {
                 id: true,
                 tipo: true,
