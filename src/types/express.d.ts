@@ -6,23 +6,23 @@
  * que pueden ser establecidos en el middleware de autenticación y utilizados posteriormente
  * en la aplicación.
  * 
- * @namespace Express
- * @extends {Request}
- * 
- * @property {string} [uid] - El identificador único del usuario. Este valor puede ser asignado
- *                             cuando el usuario se autentica y se adjunta a la solicitud.
- * @property {string} [name] - El nombre del usuario. También asignado durante la autenticación.
- * @property {string} [role] - El rol del usuario (por ejemplo, 'admin', 'user'). Se asigna
- *                              durante la autenticación y se usa para determinar los permisos
+//  * @namespace Express
+//  * @extends {Request}
+//  * 
+//  * @property {string} [uid] - El identificador único del usuario. Este valor puede ser asignado
+//  *                             cuando el usuario se autentica y se adjunta a la solicitud.
+//  * @property {string} [name] - El nombre del usuario. También asignado durante la autenticación.
+//  * @property {string} [role] - El rol del usuario (por ejemplo, 'admin', 'user'). Se asigna
+//  *                              durante la autenticación y se usa para determinar los permisos
  *                              del usuario en la aplicación.
  */
 
-declare global {
-  namespace Express {
-    interface Request {
-      uid?: string;
-      name?: string;
-      role?: string;
-    }
-  }
-}
+// declare global {
+//   namespace Express {
+//     interface Request {
+//       uid?: string;
+//       name?: string;
+//       role?: string;
+//     }
+//   }
+// }
