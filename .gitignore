@@ -1,6 +1,11 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# Ignorar la carpeta node_modules
 node_modules/
+
+# Ignorar el archivo .env que contiene variables sensibles
+.env
+
+# Ignorar la carpeta postgres (si la usas localmente para alguna base de datos o almacenamiento)
 postgres/
-src/generated
+
+# Ignorar los archivos generados de Prisma
+prisma/generated
